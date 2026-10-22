@@ -150,16 +150,6 @@
     "html_body": ""
   },
   {
-    "title": "testing-candidate-44.20260910.3",
-    "date": "2026-09-10 19:38",
-    "timestamp": 1789069097,
-    "channel": "beta",
-    "lang": "english",
-    "body": "",
-    "bbcode_body": "",
-    "html_body": ""
-  },
-  {
     "title": "testing-44.20260910.1",
     "date": "2026-09-10 19:31",
     "timestamp": 1789068696,
@@ -180,9 +170,9 @@
     "html_body": ""
   },
   {
-    "title": "testing-candidate-44.20260910.2",
-    "date": "2026-09-10 17:31",
-    "timestamp": 1789061518,
+    "title": "testing-44.20260829",
+    "date": "2026-08-29 11:15",
+    "timestamp": 1788002120,
     "channel": "beta",
     "lang": "english",
     "body": "",
@@ -190,9 +180,19 @@
     "html_body": ""
   },
   {
-    "title": "testing-candidate-44.20260910.1",
-    "date": "2026-09-10 14:45",
-    "timestamp": 1789051550,
+    "title": "testing-44.20260828",
+    "date": "2026-08-28 02:48",
+    "timestamp": 1787885320,
+    "channel": "beta",
+    "lang": "english",
+    "body": "",
+    "bbcode_body": "",
+    "html_body": ""
+  },
+  {
+    "title": "testing-44.20260827",
+    "date": "2026-08-27 02:25",
+    "timestamp": 1787797517,
     "channel": "beta",
     "lang": "english",
     "body": "",
