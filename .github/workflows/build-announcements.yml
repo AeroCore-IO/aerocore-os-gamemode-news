@@ -1,0 +1,62 @@
+name: Build announcements.json
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  repository_dispatch:
+    types: [build-announcements]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Target branch
+        required: true
+        type: choice
+        options:
+          - stable
+          - testing
+          - unstable
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-announcements-${{ github.event.client_payload.branch || github.event.inputs.branch }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve target branch
+        id: target
+        env:
+          DISPATCH_BRANCH: ${{ github.event.client_payload.branch }}
+          INPUT_BRANCH: ${{ github.event.inputs.branch }}
+        run: |
+          BRANCH="${DISPATCH_BRANCH:-${INPUT_BRANCH:-stable}}"
+          case "$BRANCH" in
+            stable|testing|unstable) ;;
+            *) echo "::error::invalid or missing branch: '$BRANCH'"; exit 1 ;;
+          esac
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.target.outputs.branch }}
+
+      - name: Build announcements.json
+        run: python3 .github/scripts/build-announcements.py
+        env:
+          RELEASE_BRANCH: ${{ steps.target.outputs.branch }}
+          SOURCE_REPO: AeroCore-IO/AeroCore-OS
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TZ: UTC
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add announcements.json docs/
+          git diff --cached --quiet || git commit -m "chore: rebuild game mode announcements" -m "Refresh Steam update notes from AeroCore OS releases."
+          git pull --rebase
+          git push

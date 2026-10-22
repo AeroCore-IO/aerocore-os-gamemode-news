@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkorionOS Updates</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1923;color:#c7d5e0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;min-height:100vh}
+.container{max-width:720px;margin:0 auto;padding:24px 16px}
+header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+h1{font-size:1.5rem;color:#fff;font-weight:700;letter-spacing:.5px}
+.lang-wrap{display:flex;align-items:center;gap:6px;background:#1b2838;border:1px solid #2a475e;border-radius:6px;padding:4px 8px}
+.lang-wrap:focus-within{border-color:#66c0f4}
+.lang-icon{color:#8f98a0;flex-shrink:0}
+.lang-select{background:transparent;color:#c7d5e0;border:none;font-size:.85rem;cursor:pointer;outline:none}
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab{background:transparent;color:#8f98a0;border:1px solid #2a475e;border-radius:20px;padding:6px 16px;font-size:.85rem;cursor:pointer;transition:all .2s}
+.tab:hover{border-color:#66c0f4;color:#c7d5e0}
+.tab.active{background:var(--ch-color,#66c0f4);color:#fff;border-color:var(--ch-color,#66c0f4)}
+.tab[data-channel="all"]{--ch-color:#66c0f4}
+.cards{display:flex;flex-direction:column;gap:16px}
+.card{background:#1b2838;border:1px solid #2a475e;border-radius:10px;padding:20px;transition:border-color .2s}
+.card:hover{border-color:#66c0f4}
+.card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.card-title{font-size:1.1rem;color:#fff;font-weight:600}
+.badge{font-size:.75rem;padding:2px 10px;border-radius:10px;color:#fff;font-weight:500;white-space:nowrap}
+.card-date{font-size:.8rem;color:#8f98a0;margin-left:auto}
+.card-body{color:#acb2b8;font-size:.9rem}
+.card-body strong{color:#c7d5e0}
+.card-body ul,.card-body ol{padding-left:20px;margin:6px 0}
+.card-body li{margin:3px 0}
+.card-body p{margin:6px 0}
+.card-body a{color:#66c0f4;text-decoration:none}
+.card-body a:hover{text-decoration:underline}
+.card-body table{border-collapse:collapse;margin:8px 0;width:100%}
+.card-body th,.card-body td{border:1px solid #2a475e;padding:6px 12px;text-align:left}
+.card-body th{background:#1e2a3a;color:#c7d5e0;font-weight:600}
+.empty{text-align:center;color:#8f98a0;padding:40px 0;font-size:.95rem}
+footer{text-align:center;color:#4a5568;font-size:.75rem;margin-top:40px;padding:20px 0;border-top:1px solid #1b2838}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>SkorionOS Updates</h1>
+  <div class="lang-wrap"><svg class="lang-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg><select class="lang-select" id="langSelect">
+    <option value="all" data-label-en="All Languages" data-label-zh="所有语言">所有语言</option>
+    <option value="english" data-label-en="English" data-label-zh="English">English</option>
+
+  </select></div>
+</header>
+<div class="tabs" id="tabs">
+  <button class="tab active" data-channel="all" data-label-en="All" data-label-zh="全部" style="--ch-color:#66c0f4">全部</button>
+  <button class="tab" data-channel="rel" data-label-en="Stable" data-label-zh="稳定版" style="--ch-color:#4caf50">稳定版</button>
+
+</div>
+<div class="cards" id="cards"></div>
+<div class="empty" id="empty" style="display:none">No announcements / 暂无公告</div>
+<footer>SkorionOS &copy; 2026</footer>
+</div>
+<script>
+var DATA=[{"title": "44.20261016.1", "date": "2026-10-16 01:55", "timestamp": 1792115753, "channel": "rel", "lang": "english", "body": "### Major packages\n\n| Name | Version |\n| --- | --- |\n| **Bazaar** | 0.9.3-4.fc44 |\n| **Distrobox** | 1.8.2.5-1.fc44 |\n| **Gamescope Session** | 0~20261002git.08e65a6-1.fc44 |\n| **InputPlumber** | 0.82.0-2.fc44 |\n| **Kernel** | 7.2.9-201.fc44 |\n| **Firmware** | 20260916-1.fc44 |\n| **Mesa** | 1:26.2.4-1.fc44 |\n| **OpenGamepadUI** | 0.46.1-8.fc44 |\n| **KDE** | 6.7.5-1.fc44 |\n| **PowerStation** | 0.8.4-1.fc44 |\n| **UMU Launcher** | 1.4.4-1.fc44 |\n| **Waydroid** | 1.6.3-1.fc44 |\n\n### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| **Upstream Bazzite** | Commit range unavailable (previous image may predate base image metadata) | — |\n| **AeroCore OS** | | |\n| [5725363](https://github.com/AeroCore-IO/AeroCore-OS/commit/5725363f633c31a0f96e70f1400fba4958a4356c) | Merge pull request #35 from AeroCore-IO/codex/ci-deps-28-32 | Tranch |\n| [8f10d7f](https://github.com/AeroCore-IO/AeroCore-OS/commit/8f10d7f76966f8de6dfe0a97c97f258b78f2a416) | chore: refresh release CI actions | tranch |", "bbcode_body": "[h3]Major packages[/h3]\n\n[table]\n[tr][th]Name[/th][th]Version[/th][/tr]\n[tr][td][b]Bazaar[/b][/td][td]0.9.3-4.fc44[/td][/tr]\n[tr][td][b]Distrobox[/b][/td][td]1.8.2.5-1.fc44[/td][/tr]\n[tr][td][b]Gamescope Session[/b][/td][td]0~20261002git.08e65a6-1.fc44[/td][/tr]\n[tr][td][b]InputPlumber[/b][/td][td]0.82.0-2.fc44[/td][/tr]\n[tr][td][b]Kernel[/b][/td][td]7.2.9-201.fc44[/td][/tr]\n[tr][td][b]Firmware[/b][/td][td]20260916-1.fc44[/td][/tr]\n[tr][td][b]Mesa[/b][/td][td]1:26.2.4-1.fc44[/td][/tr]\n[tr][td][b]OpenGamepadUI[/b][/td][td]0.46.1-8.fc44[/td][/tr]\n[tr][td][b]KDE[/b][/td][td]6.7.5-1.fc44[/td][/tr]\n[tr][td][b]PowerStation[/b][/td][td]0.8.4-1.fc44[/td][/tr]\n[tr][td][b]UMU Launcher[/b][/td][td]1.4.4-1.fc44[/td][/tr]\n[tr][td][b]Waydroid[/b][/td][td]1.6.3-1.fc44[/td][/tr]\n[/table]\n\n[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][b]Upstream Bazzite[/b][/td][td]Commit range unavailable (previous image may predate base image metadata)[/td][td]—[/td][/tr]\n[tr][td][b]AeroCore OS[/b][/td][td][/td][td][/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/5725363f633c31a0f96e70f1400fba4958a4356c]5725363[/url][/td][td]Merge pull request #35 from AeroCore-IO/codex/ci-deps-28-32[/td][td]Tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/8f10d7f76966f8de6dfe0a97c97f258b78f2a416]8f10d7f[/url][/td][td]chore: refresh release CI actions[/td][td]tranch[/td][/tr]\n[/table]", "html_body": "<h3>Major packages</h3>\n\n<table>\n<tr><th>Name</th><th>Version</th></tr>\n<tr><td><strong>Bazaar</strong></td><td>0.9.3-4.fc44</td></tr>\n<tr><td><strong>Distrobox</strong></td><td>1.8.2.5-1.fc44</td></tr>\n<tr><td><strong>Gamescope Session</strong></td><td>0~20261002git.08e65a6-1.fc44</td></tr>\n<tr><td><strong>InputPlumber</strong></td><td>0.82.0-2.fc44</td></tr>\n<tr><td><strong>Kernel</strong></td><td>7.2.9-201.fc44</td></tr>\n<tr><td><strong>Firmware</strong></td><td>20260916-1.fc44</td></tr>\n<tr><td><strong>Mesa</strong></td><td>1:26.2.4-1.fc44</td></tr>\n<tr><td><strong>OpenGamepadUI</strong></td><td>0.46.1-8.fc44</td></tr>\n<tr><td><strong>KDE</strong></td><td>6.7.5-1.fc44</td></tr>\n<tr><td><strong>PowerStation</strong></td><td>0.8.4-1.fc44</td></tr>\n<tr><td><strong>UMU Launcher</strong></td><td>1.4.4-1.fc44</td></tr>\n<tr><td><strong>Waydroid</strong></td><td>1.6.3-1.fc44</td></tr>\n</table>\n\n<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><strong>Upstream Bazzite</strong></td><td>Commit range unavailable (previous image may predate base image metadata)</td><td>—</td></tr>\n<tr><td><strong>AeroCore OS</strong></td><td></td><td></td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/5725363f633c31a0f96e70f1400fba4958a4356c\" target=\"_blank\" rel=\"noopener\">5725363</a></td><td>Merge pull request #35 from AeroCore-IO/codex/ci-deps-28-32</td><td>Tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/8f10d7f76966f8de6dfe0a97c97f258b78f2a416\" target=\"_blank\" rel=\"noopener\">8f10d7f</a></td><td>chore: refresh release CI actions</td><td>tranch</td></tr>\n</table>"}, {"title": "44.20261016", "date": "2026-10-16 00:25", "timestamp": 1792110326, "channel": "rel", "lang": "english", "body": "### Major packages\n\n| Name | Version |\n| --- | --- |\n| **Bazaar** | 0.9.3-4.fc44 |\n| **Distrobox** | 1.8.2.5-1.fc44 |\n| **Gamescope Session** | 0~20261002git.08e65a6-1.fc44 |\n| **InputPlumber** | 0.82.0-2.fc44 |\n| **Kernel** | 7.2.9-201.fc44 |\n| **Firmware** | 20260916-1.fc44 |\n| **Mesa** | 1:26.2.4-1.fc44 |\n| **OpenGamepadUI** | 0.46.1-8.fc44 |\n| **KDE** | 6.7.5-1.fc44 |\n| **PowerStation** | 0.8.4-1.fc44 |\n| **UMU Launcher** | 1.4.4-1.fc44 |\n| **Waydroid** | 1.6.3-1.fc44 |\n\n### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| **Upstream Bazzite** | Commit range unavailable (previous image may predate base image metadata) | — |\n| **AeroCore OS** | | |\n| [ea5df62](https://github.com/AeroCore-IO/AeroCore-OS/commit/ea5df624eb09078dfad7408c7810408f92aad85e) | Merge pull request #31 from AeroCore-IO/dependabot/github_actions/oras-project/setup-oras-2.0.2 | Tranch |\n| [b9a728b](https://github.com/AeroCore-IO/AeroCore-OS/commit/b9a728bf0bd18b8bd45bbf7d022b4f0a6a24ffcd) | chore(deps): bump oras-project/setup-oras from 2.0.1 to 2.0.2 | dependabot[bot] |", "bbcode_body": "[h3]Major packages[/h3]\n\n[table]\n[tr][th]Name[/th][th]Version[/th][/tr]\n[tr][td][b]Bazaar[/b][/td][td]0.9.3-4.fc44[/td][/tr]\n[tr][td][b]Distrobox[/b][/td][td]1.8.2.5-1.fc44[/td][/tr]\n[tr][td][b]Gamescope Session[/b][/td][td]0~20261002git.08e65a6-1.fc44[/td][/tr]\n[tr][td][b]InputPlumber[/b][/td][td]0.82.0-2.fc44[/td][/tr]\n[tr][td][b]Kernel[/b][/td][td]7.2.9-201.fc44[/td][/tr]\n[tr][td][b]Firmware[/b][/td][td]20260916-1.fc44[/td][/tr]\n[tr][td][b]Mesa[/b][/td][td]1:26.2.4-1.fc44[/td][/tr]\n[tr][td][b]OpenGamepadUI[/b][/td][td]0.46.1-8.fc44[/td][/tr]\n[tr][td][b]KDE[/b][/td][td]6.7.5-1.fc44[/td][/tr]\n[tr][td][b]PowerStation[/b][/td][td]0.8.4-1.fc44[/td][/tr]\n[tr][td][b]UMU Launcher[/b][/td][td]1.4.4-1.fc44[/td][/tr]\n[tr][td][b]Waydroid[/b][/td][td]1.6.3-1.fc44[/td][/tr]\n[/table]\n\n[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][b]Upstream Bazzite[/b][/td][td]Commit range unavailable (previous image may predate base image metadata)[/td][td]—[/td][/tr]\n[tr][td][b]AeroCore OS[/b][/td][td][/td][td][/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/ea5df624eb09078dfad7408c7810408f92aad85e]ea5df62[/url][/td][td]Merge pull request #31 from AeroCore-IO/dependabot/github_actions/oras-project/setup-oras-2.0.2[/td][td]Tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/b9a728bf0bd18b8bd45bbf7d022b4f0a6a24ffcd]b9a728b[/url][/td][td]chore(deps): bump oras-project/setup-oras from 2.0.1 to 2.0.2[/td][td]dependabot[bot][/td][/tr]\n[/table]", "html_body": "<h3>Major packages</h3>\n\n<table>\n<tr><th>Name</th><th>Version</th></tr>\n<tr><td><strong>Bazaar</strong></td><td>0.9.3-4.fc44</td></tr>\n<tr><td><strong>Distrobox</strong></td><td>1.8.2.5-1.fc44</td></tr>\n<tr><td><strong>Gamescope Session</strong></td><td>0~20261002git.08e65a6-1.fc44</td></tr>\n<tr><td><strong>InputPlumber</strong></td><td>0.82.0-2.fc44</td></tr>\n<tr><td><strong>Kernel</strong></td><td>7.2.9-201.fc44</td></tr>\n<tr><td><strong>Firmware</strong></td><td>20260916-1.fc44</td></tr>\n<tr><td><strong>Mesa</strong></td><td>1:26.2.4-1.fc44</td></tr>\n<tr><td><strong>OpenGamepadUI</strong></td><td>0.46.1-8.fc44</td></tr>\n<tr><td><strong>KDE</strong></td><td>6.7.5-1.fc44</td></tr>\n<tr><td><strong>PowerStation</strong></td><td>0.8.4-1.fc44</td></tr>\n<tr><td><strong>UMU Launcher</strong></td><td>1.4.4-1.fc44</td></tr>\n<tr><td><strong>Waydroid</strong></td><td>1.6.3-1.fc44</td></tr>\n</table>\n\n<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><strong>Upstream Bazzite</strong></td><td>Commit range unavailable (previous image may predate base image metadata)</td><td>—</td></tr>\n<tr><td><strong>AeroCore OS</strong></td><td></td><td></td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/ea5df624eb09078dfad7408c7810408f92aad85e\" target=\"_blank\" rel=\"noopener\">ea5df62</a></td><td>Merge pull request #31 from AeroCore-IO/dependabot/github_actions/oras-project/setup-oras-2.0.2</td><td>Tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/b9a728bf0bd18b8bd45bbf7d022b4f0a6a24ffcd\" target=\"_blank\" rel=\"noopener\">b9a728b</a></td><td>chore(deps): bump oras-project/setup-oras from 2.0.1 to 2.0.2</td><td>dependabot[bot]</td></tr>\n</table>"}, {"title": "44.20261015", "date": "2026-10-15 18:02", "timestamp": 1792087349, "channel": "rel", "lang": "english", "body": "### Major packages\n\n| Name | Version |\n| --- | --- |\n| **Bazaar** | 0.9.3-4.fc44 |\n| **Distrobox** | 1.8.2.5-1.fc44 |\n| **Gamescope Session** | 0~20260905git.1ddd3a9-1.fc44 ➡️ 0~20261002git.08e65a6-1.fc44 |\n| **InputPlumber** | 0.79.0-4.fc44 ➡️ 0.82.0-2.fc44 |\n| **Kernel** | 7.1.13-200.fc44 ➡️ 7.2.9-201.fc44 |\n| **Firmware** | 20260810-1.fc44 ➡️ 20260916-1.fc44 |\n| **Mesa** | 1:26.2.2-1.fc44 ➡️ 1:26.2.4-1.fc44 |\n| **OpenGamepadUI** | 0.46.1-4.fc44 ➡️ 0.46.1-8.fc44 |\n| **KDE** | 6.7.4-1.fc44 ➡️ 6.7.5-1.fc44 |\n| **PowerStation** | 0.8.3-1.fc44 ➡️ 0.8.4-1.fc44 |\n| **UMU Launcher** | 1.4.4-1.fc44 |\n| **Waydroid** | 1.6.3-1.fc44 |\n\n### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| **Upstream Bazzite** | Commit range unavailable (previous image may predate base image metadata) | — |\n| **AeroCore OS** | | |\n| [6c001a9](https://github.com/AeroCore-IO/AeroCore-OS/commit/6c001a951ae122b34c86eefcd9abc8f3a1e32a26) | Merge pull request #33 from AeroCore-IO/testing | Tranch |\n| [3fbfb2b](https://github.com/AeroCore-IO/AeroCore-OS/commit/3fbfb2bd4bb5e27509e8697018cddd105fca8dad) | Merge branch 'main' into testing | Tranch |\n| [0891c70](https://github.com/AeroCore-IO/AeroCore-OS/commit/0891c70f559c7d23a306290334388853ff317181) | fix: tolerate unavailable changelog revisions | tranch |\n| [f7c0955](https://github.com/AeroCore-IO/AeroCore-OS/commit/f7c095592475d22e6d1d263b988c8a7974882521) | chore: align testing with Bazzite 44.20261012 | tranch |\n| [9fcb843](https://github.com/AeroCore-IO/AeroCore-OS/commit/9fcb843f225e9618155a6b9228006859e91f7f0b) | fix: correct release commits section | tranch |\n| [3f7496d](https://github.com/AeroCore-IO/AeroCore-OS/commit/3f7496d580f185c0974c5edc107570c471d0cdde) | Align Live and installer ISO commands | tranch |\n| [01f191a](https://github.com/AeroCore-IO/AeroCore-OS/commit/01f191a5e2e3ca5ac6884b09f6ffcbfd5094f555) | Align Live and installer ISO commands | tranch |\n| [fa7a54f](https://github.com/AeroCore-IO/AeroCore-OS/commit/fa7a54f7d51f3086f35239d7117b9c5988a96c68) | build: update Bazzite base to 44.20260921 | tranch |\n| [a2c9b4a](https://github.com/AeroCore-IO/AeroCore-OS/commit/a2c9b4aa17b0c28d0f0d34de13fe14f35c3da39e) | feat: organize upstream release notes | tranch |\n| [0134725](https://github.com/AeroCore-IO/AeroCore-OS/commit/0134725c60a6ef58c270fe7c5ac17e07521c09ba) | fix: fall back to anonymous release downloads | tranch |\n| [f513797](https://github.com/AeroCore-IO/AeroCore-OS/commit/f51379753a1474154760fb8cef295dd8ec4c984d) | fix: adapt instruments release layout | tranch |\n| [d571c3d](https://github.com/AeroCore-IO/AeroCore-OS/commit/d571c3ddf55118e35f4cf5a567a52249e0a9a802) | build: Update base image tag | tranch |\n| [dd9d8b8](https://github.com/AeroCore-IO/AeroCore-OS/commit/dd9d8b89e8bb28eac34654536525916deddd9a9d) | Pin testing base to Bazzite 44.20260919 | tranch |", "bbcode_body": "[h3]Major packages[/h3]\n\n[table]\n[tr][th]Name[/th][th]Version[/th][/tr]\n[tr][td][b]Bazaar[/b][/td][td]0.9.3-4.fc44[/td][/tr]\n[tr][td][b]Distrobox[/b][/td][td]1.8.2.5-1.fc44[/td][/tr]\n[tr][td][b]Gamescope Session[/b][/td][td]0~20260905git.1ddd3a9-1.fc44 ➡️ 0~20261002git.08e65a6-1.fc44[/td][/tr]\n[tr][td][b]InputPlumber[/b][/td][td]0.79.0-4.fc44 ➡️ 0.82.0-2.fc44[/td][/tr]\n[tr][td][b]Kernel[/b][/td][td]7.1.13-200.fc44 ➡️ 7.2.9-201.fc44[/td][/tr]\n[tr][td][b]Firmware[/b][/td][td]20260810-1.fc44 ➡️ 20260916-1.fc44[/td][/tr]\n[tr][td][b]Mesa[/b][/td][td]1:26.2.2-1.fc44 ➡️ 1:26.2.4-1.fc44[/td][/tr]\n[tr][td][b]OpenGamepadUI[/b][/td][td]0.46.1-4.fc44 ➡️ 0.46.1-8.fc44[/td][/tr]\n[tr][td][b]KDE[/b][/td][td]6.7.4-1.fc44 ➡️ 6.7.5-1.fc44[/td][/tr]\n[tr][td][b]PowerStation[/b][/td][td]0.8.3-1.fc44 ➡️ 0.8.4-1.fc44[/td][/tr]\n[tr][td][b]UMU Launcher[/b][/td][td]1.4.4-1.fc44[/td][/tr]\n[tr][td][b]Waydroid[/b][/td][td]1.6.3-1.fc44[/td][/tr]\n[/table]\n\n[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][b]Upstream Bazzite[/b][/td][td]Commit range unavailable (previous image may predate base image metadata)[/td][td]—[/td][/tr]\n[tr][td][b]AeroCore OS[/b][/td][td][/td][td][/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/6c001a951ae122b34c86eefcd9abc8f3a1e32a26]6c001a9[/url][/td][td]Merge pull request #33 from AeroCore-IO/testing[/td][td]Tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/3fbfb2bd4bb5e27509e8697018cddd105fca8dad]3fbfb2b[/url][/td][td]Merge branch 'main' into testing[/td][td]Tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/0891c70f559c7d23a306290334388853ff317181]0891c70[/url][/td][td]fix: tolerate unavailable changelog revisions[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/f7c095592475d22e6d1d263b988c8a7974882521]f7c0955[/url][/td][td]chore: align testing with Bazzite 44.20261012[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/9fcb843f225e9618155a6b9228006859e91f7f0b]9fcb843[/url][/td][td]fix: correct release commits section[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/3f7496d580f185c0974c5edc107570c471d0cdde]3f7496d[/url][/td][td]Align Live and installer ISO commands[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/01f191a5e2e3ca5ac6884b09f6ffcbfd5094f555]01f191a[/url][/td][td]Align Live and installer ISO commands[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/fa7a54f7d51f3086f35239d7117b9c5988a96c68]fa7a54f[/url][/td][td]build: update Bazzite base to 44.20260921[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/a2c9b4aa17b0c28d0f0d34de13fe14f35c3da39e]a2c9b4a[/url][/td][td]feat: organize upstream release notes[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/0134725c60a6ef58c270fe7c5ac17e07521c09ba]0134725[/url][/td][td]fix: fall back to anonymous release downloads[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/f51379753a1474154760fb8cef295dd8ec4c984d]f513797[/url][/td][td]fix: adapt instruments release layout[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/d571c3ddf55118e35f4cf5a567a52249e0a9a802]d571c3d[/url][/td][td]build: Update base image tag[/td][td]tranch[/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/dd9d8b89e8bb28eac34654536525916deddd9a9d]dd9d8b8[/url][/td][td]Pin testing base to Bazzite 44.20260919[/td][td]tranch[/td][/tr]\n[/table]", "html_body": "<h3>Major packages</h3>\n\n<table>\n<tr><th>Name</th><th>Version</th></tr>\n<tr><td><strong>Bazaar</strong></td><td>0.9.3-4.fc44</td></tr>\n<tr><td><strong>Distrobox</strong></td><td>1.8.2.5-1.fc44</td></tr>\n<tr><td><strong>Gamescope Session</strong></td><td>0~20260905git.1ddd3a9-1.fc44 ➡️ 0~20261002git.08e65a6-1.fc44</td></tr>\n<tr><td><strong>InputPlumber</strong></td><td>0.79.0-4.fc44 ➡️ 0.82.0-2.fc44</td></tr>\n<tr><td><strong>Kernel</strong></td><td>7.1.13-200.fc44 ➡️ 7.2.9-201.fc44</td></tr>\n<tr><td><strong>Firmware</strong></td><td>20260810-1.fc44 ➡️ 20260916-1.fc44</td></tr>\n<tr><td><strong>Mesa</strong></td><td>1:26.2.2-1.fc44 ➡️ 1:26.2.4-1.fc44</td></tr>\n<tr><td><strong>OpenGamepadUI</strong></td><td>0.46.1-4.fc44 ➡️ 0.46.1-8.fc44</td></tr>\n<tr><td><strong>KDE</strong></td><td>6.7.4-1.fc44 ➡️ 6.7.5-1.fc44</td></tr>\n<tr><td><strong>PowerStation</strong></td><td>0.8.3-1.fc44 ➡️ 0.8.4-1.fc44</td></tr>\n<tr><td><strong>UMU Launcher</strong></td><td>1.4.4-1.fc44</td></tr>\n<tr><td><strong>Waydroid</strong></td><td>1.6.3-1.fc44</td></tr>\n</table>\n\n<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><strong>Upstream Bazzite</strong></td><td>Commit range unavailable (previous image may predate base image metadata)</td><td>—</td></tr>\n<tr><td><strong>AeroCore OS</strong></td><td></td><td></td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/6c001a951ae122b34c86eefcd9abc8f3a1e32a26\" target=\"_blank\" rel=\"noopener\">6c001a9</a></td><td>Merge pull request #33 from AeroCore-IO/testing</td><td>Tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/3fbfb2bd4bb5e27509e8697018cddd105fca8dad\" target=\"_blank\" rel=\"noopener\">3fbfb2b</a></td><td>Merge branch &#x27;main&#x27; into testing</td><td>Tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/0891c70f559c7d23a306290334388853ff317181\" target=\"_blank\" rel=\"noopener\">0891c70</a></td><td>fix: tolerate unavailable changelog revisions</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/f7c095592475d22e6d1d263b988c8a7974882521\" target=\"_blank\" rel=\"noopener\">f7c0955</a></td><td>chore: align testing with Bazzite 44.20261012</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/9fcb843f225e9618155a6b9228006859e91f7f0b\" target=\"_blank\" rel=\"noopener\">9fcb843</a></td><td>fix: correct release commits section</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/3f7496d580f185c0974c5edc107570c471d0cdde\" target=\"_blank\" rel=\"noopener\">3f7496d</a></td><td>Align Live and installer ISO commands</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/01f191a5e2e3ca5ac6884b09f6ffcbfd5094f555\" target=\"_blank\" rel=\"noopener\">01f191a</a></td><td>Align Live and installer ISO commands</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/fa7a54f7d51f3086f35239d7117b9c5988a96c68\" target=\"_blank\" rel=\"noopener\">fa7a54f</a></td><td>build: update Bazzite base to 44.20260921</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/a2c9b4aa17b0c28d0f0d34de13fe14f35c3da39e\" target=\"_blank\" rel=\"noopener\">a2c9b4a</a></td><td>feat: organize upstream release notes</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/0134725c60a6ef58c270fe7c5ac17e07521c09ba\" target=\"_blank\" rel=\"noopener\">0134725</a></td><td>fix: fall back to anonymous release downloads</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/f51379753a1474154760fb8cef295dd8ec4c984d\" target=\"_blank\" rel=\"noopener\">f513797</a></td><td>fix: adapt instruments release layout</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/d571c3ddf55118e35f4cf5a567a52249e0a9a802\" target=\"_blank\" rel=\"noopener\">d571c3d</a></td><td>build: Update base image tag</td><td>tranch</td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/dd9d8b89e8bb28eac34654536525916deddd9a9d\" target=\"_blank\" rel=\"noopener\">dd9d8b8</a></td><td>Pin testing base to Bazzite 44.20260919</td><td>tranch</td></tr>\n</table>"}, {"title": "44.20260913.1", "date": "2026-09-13 16:40", "timestamp": 1789317620, "channel": "rel", "lang": "english", "body": "### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| [a6a2705](https://github.com/AeroCore-IO/AeroCore-OS/commit/a6a27050efa50c444816905a4c628adc68e8dd12) | fix release changelog for unrelated histories | tranch |", "bbcode_body": "[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/a6a27050efa50c444816905a4c628adc68e8dd12]a6a2705[/url][/td][td]fix release changelog for unrelated histories[/td][td]tranch[/td][/tr]\n[/table]", "html_body": "<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/a6a27050efa50c444816905a4c628adc68e8dd12\" target=\"_blank\" rel=\"noopener\">a6a2705</a></td><td>fix release changelog for unrelated histories</td><td>tranch</td></tr>\n</table>"}];
+var CHANNEL_LABELS={"rel": {"en": "Stable", "zh": "稳定版"}, "beta": {"en": "Beta", "zh": "测试版"}, "preview": {"en": "Preview", "zh": "预览版"}, "main": {"en": "Super Preview", "zh": "超级前瞻版"}};
+var LANG_LABELS={"schinese": "简体中文", "tchinese": "繁體中文", "english": "English", "japanese": "日本語", "koreana": "한국어"};
+var BROWSER_LANG_MAP={
+  "zh":"schinese","zh-cn":"schinese","zh-hans":"schinese",
+  "zh-tw":"tchinese","zh-hk":"tchinese","zh-hant":"tchinese",
+  "en":"english","ja":"japanese","ko":"koreana",
+  "de":"german","fr":"french","es":"spanish","pt":"portuguese",
+  "pt-br":"brazilian","ru":"russian","it":"italian","nl":"dutch",
+  "pl":"polish","tr":"turkish","vi":"vietnamese","th":"thai",
+  "sv":"swedish","fi":"finnish","da":"danish","nb":"norwegian","no":"norwegian",
+  "hu":"hungarian","cs":"czech","ro":"romanian","bg":"bulgarian",
+  "el":"greek","uk":"ukrainian","id":"indonesian","ms":"indonesian"
+};
+var AVAILABLE_LANGS={};
+for(var i=0;i<DATA.length;i++) if(DATA[i].lang) AVAILABLE_LANGS[DATA[i].lang]=1;
+
+function detectBrowserLang(){
+  var langs=navigator.languages||[navigator.language||""];
+  for(var i=0;i<langs.length;i++){
+    var tag=langs[i].toLowerCase();
+    if(tag.startsWith("zh")) return "zh";
+  }
+  return "en";
+}
+
+function detectContentLang(){
+  var langs=navigator.languages||[navigator.language||""];
+  for(var i=0;i<langs.length;i++){
+    var tag=langs[i].toLowerCase();
+    var match=BROWSER_LANG_MAP[tag]||BROWSER_LANG_MAP[tag.split("-")[0]];
+    if(match&&AVAILABLE_LANGS[match]) return match;
+  }
+  return "all";
+}
+
+var curChannel="all",curLang=detectContentLang();
+document.getElementById("langSelect").value=curLang;
+
+var ZH_LANGS={"schinese":1,"tchinese":1};
+function getUILang(){
+  if(curLang==="all") return detectBrowserLang();
+  return ZH_LANGS[curLang]?"zh":"en";
+}
+
+function chLabel(labels){var ui=getUILang();return ui==="zh"?(labels.zh||labels.en||""):(labels.en||labels.zh||"");}
+
+function updateUILang(){
+  var ui=getUILang();
+  document.querySelectorAll(".tab").forEach(function(t){
+    var en=t.dataset.labelEn,zh=t.dataset.labelZh;
+    t.textContent=ui==="zh"?(zh||en):(en||zh);
+  });
+  var sel=document.getElementById("langSelect");
+  for(var i=0;i<sel.options.length;i++){
+    var o=sel.options[i];
+    if(o.dataset.labelEn) o.textContent=ui==="zh"?(o.dataset.labelZh||o.dataset.labelEn):(o.dataset.labelEn||o.dataset.labelZh);
+  }
+}
+updateUILang();
+
+function render(){
+  var cards=document.getElementById("cards");
+  cards.innerHTML="";
+  var count=0;
+  for(var i=0;i<DATA.length;i++){
+    var e=DATA[i];
+    if(curChannel!=="all"&&e.channel!==curChannel) continue;
+    if(curLang!=="all"&&e.lang&&e.lang!==curLang) continue;
+    count++;
+    var ch=e.channel||"";
+    var labels=CHANNEL_LABELS[ch]||{};
+    var labelText=chLabel(labels)||ch;
+    var color={"rel": "#4caf50", "beta": "#ff9800", "preview": "#f44336", "main": "#e40336"};
+    var c=document.createElement("div");
+    c.className="card";
+    c.innerHTML='<div class="card-header">'
+      +'<span class="card-title">'+esc(e.title)+'</span>'
+      +(ch?'<span class="badge" style="background:'+(color[ch]||"#9e9e9e")+'">'+esc(labelText)+'</span>':'')
+      +'<span class="card-date">'+esc(e.date.split(" ")[0])+'</span>'
+      +'</div>'
+      +'<div class="card-body">'+e.html_body+'</div>';
+    cards.appendChild(c);
+  }
+  document.getElementById("empty").style.display=count?"none":"block";
+}
+
+function esc(s){var d=document.createElement("span");d.textContent=s;return d.innerHTML;}
+
+document.getElementById("tabs").addEventListener("click",function(ev){
+  var btn=ev.target.closest(".tab");
+  if(!btn) return;
+  curChannel=btn.dataset.channel;
+  document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("active")});
+  btn.classList.add("active");
+  render();
+});
+
+document.getElementById("langSelect").addEventListener("change",function(){
+  curLang=this.value;
+  updateUILang();
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
