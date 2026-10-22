@@ -394,6 +394,11 @@ def main():
     token = os.environ.get("GITHUB_TOKEN") or None
 
     releases = fetch_releases(SOURCE_REPO, token)
+    if branch in ("testing", "unstable"):
+        releases = [
+            release for release in releases
+            if re.match(rf"^{branch}-\d", release.get("tag_name") or "")
+        ]
     selected = select_releases(releases, prerelease, MAX_ENTRIES)
     entries = [release_to_entry(r, channel) for r in selected]
 
