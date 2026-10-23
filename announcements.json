@@ -1,5 +1,15 @@
 [
   {
+    "title": "testing-44.20261023",
+    "date": "2026-10-23 02:48",
+    "timestamp": 1792723709,
+    "channel": "beta",
+    "lang": "english",
+    "body": "### Major packages\n\n| Name | Version |\n| --- | --- |\n| **Bazaar** | 0.9.3-4.fc44 |\n| **Distrobox** | 1.8.2.5-1.fc44 |\n| **Gamescope Session** | 0~20261002git.08e65a6-1.fc44 |\n| **InputPlumber** | 0.82.0-2.fc44 |\n| **Kernel** | 7.2.9-201.fc44 |\n| **Firmware** | 20260916-1.fc44 |\n| **Mesa** | 1:26.2.4-1.fc44 |\n| **OpenGamepadUI** | 0.46.1-8.fc44 |\n| **KDE** | 6.7.5-1.fc44 |\n| **PowerStation** | 0.8.4-1.fc44 |\n| **UMU Launcher** | 1.4.4-1.fc44 |\n| **Waydroid** | 1.6.3-1.fc44 |\n\n### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| **Upstream Bazzite** | Commit range unavailable (previous image may predate base image metadata) | — |\n| **AeroCore OS** | | |\n| [20253bf](https://github.com/AeroCore-IO/AeroCore-OS/commit/20253bfffc4815e1c48aebb8ede28527ce80ad3e) | fix: detect Game Mode channel from booted image | tranch |",
+    "bbcode_body": "[h3]Major packages[/h3]\n\n[table]\n[tr][th]Name[/th][th]Version[/th][/tr]\n[tr][td][b]Bazaar[/b][/td][td]0.9.3-4.fc44[/td][/tr]\n[tr][td][b]Distrobox[/b][/td][td]1.8.2.5-1.fc44[/td][/tr]\n[tr][td][b]Gamescope Session[/b][/td][td]0~20261002git.08e65a6-1.fc44[/td][/tr]\n[tr][td][b]InputPlumber[/b][/td][td]0.82.0-2.fc44[/td][/tr]\n[tr][td][b]Kernel[/b][/td][td]7.2.9-201.fc44[/td][/tr]\n[tr][td][b]Firmware[/b][/td][td]20260916-1.fc44[/td][/tr]\n[tr][td][b]Mesa[/b][/td][td]1:26.2.4-1.fc44[/td][/tr]\n[tr][td][b]OpenGamepadUI[/b][/td][td]0.46.1-8.fc44[/td][/tr]\n[tr][td][b]KDE[/b][/td][td]6.7.5-1.fc44[/td][/tr]\n[tr][td][b]PowerStation[/b][/td][td]0.8.4-1.fc44[/td][/tr]\n[tr][td][b]UMU Launcher[/b][/td][td]1.4.4-1.fc44[/td][/tr]\n[tr][td][b]Waydroid[/b][/td][td]1.6.3-1.fc44[/td][/tr]\n[/table]\n\n[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][b]Upstream Bazzite[/b][/td][td]Commit range unavailable (previous image may predate base image metadata)[/td][td]—[/td][/tr]\n[tr][td][b]AeroCore OS[/b][/td][td][/td][td][/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/20253bfffc4815e1c48aebb8ede28527ce80ad3e]20253bf[/url][/td][td]fix: detect Game Mode channel from booted image[/td][td]tranch[/td][/tr]\n[/table]",
+    "html_body": "<h3>Major packages</h3>\n\n<table>\n<tr><th>Name</th><th>Version</th></tr>\n<tr><td><strong>Bazaar</strong></td><td>0.9.3-4.fc44</td></tr>\n<tr><td><strong>Distrobox</strong></td><td>1.8.2.5-1.fc44</td></tr>\n<tr><td><strong>Gamescope Session</strong></td><td>0~20261002git.08e65a6-1.fc44</td></tr>\n<tr><td><strong>InputPlumber</strong></td><td>0.82.0-2.fc44</td></tr>\n<tr><td><strong>Kernel</strong></td><td>7.2.9-201.fc44</td></tr>\n<tr><td><strong>Firmware</strong></td><td>20260916-1.fc44</td></tr>\n<tr><td><strong>Mesa</strong></td><td>1:26.2.4-1.fc44</td></tr>\n<tr><td><strong>OpenGamepadUI</strong></td><td>0.46.1-8.fc44</td></tr>\n<tr><td><strong>KDE</strong></td><td>6.7.5-1.fc44</td></tr>\n<tr><td><strong>PowerStation</strong></td><td>0.8.4-1.fc44</td></tr>\n<tr><td><strong>UMU Launcher</strong></td><td>1.4.4-1.fc44</td></tr>\n<tr><td><strong>Waydroid</strong></td><td>1.6.3-1.fc44</td></tr>\n</table>\n\n<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><strong>Upstream Bazzite</strong></td><td>Commit range unavailable (previous image may predate base image metadata)</td><td>—</td></tr>\n<tr><td><strong>AeroCore OS</strong></td><td></td><td></td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/20253bfffc4815e1c48aebb8ede28527ce80ad3e\" target=\"_blank\" rel=\"noopener\">20253bf</a></td><td>fix: detect Game Mode channel from booted image</td><td>tranch</td></tr>\n</table>"
+  },
+  {
     "title": "testing-44.20261022",
     "date": "2026-10-22 09:05",
     "timestamp": 1792659918,
@@ -183,16 +193,6 @@
     "title": "testing-44.20260829",
     "date": "2026-08-29 11:15",
     "timestamp": 1788002120,
-    "channel": "beta",
-    "lang": "english",
-    "body": "",
-    "bbcode_body": "",
-    "html_body": ""
-  },
-  {
-    "title": "testing-44.20260828",
-    "date": "2026-08-28 02:48",
-    "timestamp": 1787885320,
     "channel": "beta",
     "lang": "english",
     "body": "",
