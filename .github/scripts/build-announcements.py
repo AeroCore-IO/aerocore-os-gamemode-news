@@ -79,6 +79,53 @@ def release_to_entry(release, channel):
     }
 
 
+# Translate only fixed release-note labels. Package names, versions, commit
+# subjects, author names, and links remain as published by the release.
+ZH_LABELS = {
+    "Major packages": "主要软件包",
+    "Commits": "提交记录",
+    "Name": "名称",
+    "Version": "版本",
+    "Hash": "哈希",
+    "Subject": "主题",
+    "Author": "作者",
+    "Upstream Bazzite": "上游 Bazzite",
+    "AeroCore OS": "AeroCore OS",
+    "Commit range unavailable (previous image may predate base image metadata)":
+        "无法获取提交范围（上一镜像可能早于基础镜像元数据）",
+}
+
+
+def localize_release_body(body):
+    """Replace known interface labels in extracted release Markdown."""
+    lines = []
+    for line in body.split("\n"):
+        heading = re.fullmatch(r"(### )(.+)", line)
+        if heading:
+            line = heading.group(1) + ZH_LABELS.get(heading.group(2), heading.group(2))
+        elif _is_table_row(line):
+            cells = _parse_table_cells(line)
+            cells = [
+                "**" + ZH_LABELS[cell[2:-2]] + "**"
+                if cell.startswith("**") and cell.endswith("**")
+                and cell[2:-2] in ZH_LABELS
+                else ZH_LABELS.get(cell, cell)
+                for cell in cells
+            ]
+            line = "| " + " | ".join(cells) + " |"
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def release_to_zh_entry(release, channel):
+    """Create the Steam Simplified Chinese counterpart of a release entry."""
+    entry = release_to_entry(release, channel)
+    body = localize_release_body(entry["body"])
+    entry.update(lang="schinese", body=body,
+                 bbcode_body=md_to_bbcode(body), html_body=md_to_html(body))
+    return entry
+
+
 def fetch_releases(repo, token, urlopen=None):
     """Fetch all releases for a repo (paginated), newest first. stdlib only."""
     opener = urlopen or urllib.request.urlopen
@@ -400,7 +447,10 @@ def main():
             if re.match(rf"^{branch}-\d", release.get("tag_name") or "")
         ]
     selected = select_releases(releases, prerelease, MAX_ENTRIES)
-    entries = [release_to_entry(r, channel) for r in selected]
+    entries = [entry for release in selected for entry in (
+        release_to_entry(release, channel),
+        release_to_zh_entry(release, channel),
+    )]
 
     out_file = os.path.normpath(OUTPUT_FILE)
     with open(out_file, "w", encoding="utf-8") as f:

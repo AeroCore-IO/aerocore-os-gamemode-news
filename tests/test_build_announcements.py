@@ -179,3 +179,26 @@ def test_release_to_entry_null_name_coalesces_to_empty_title(mod):
     }
     e = mod.release_to_entry(release, "rel")
     assert e["title"] == ""
+
+
+def test_simplified_chinese_entry_replaces_only_release_labels(mod):
+    release = {
+        "name": "44.20260713: Stable (F44.20260713)",
+        "published_at": "2026-07-13T06:47:03Z",
+        "body": SAMPLE_BODY.replace(
+            "| **abc123** | feat: do a thing | Someone |",
+            "| **Upstream Bazzite** | Commit range unavailable (previous image may predate base image metadata) | — |\n"
+            "| [abc123](https://example.com/commit/abc123) | feat: do a thing | Someone |",
+        ),
+    }
+    en = mod.release_to_entry(release, "rel")
+    zh = mod.release_to_zh_entry(release, "rel")
+    assert zh["lang"] == "schinese"
+    assert (zh["title"], zh["date"], zh["timestamp"], zh["channel"]) == (
+        en["title"], en["date"], en["timestamp"], en["channel"])
+    assert "### 主要软件包" in zh["body"]
+    assert "| 名称 | 版本 |" in zh["body"]
+    assert "| **上游 Bazzite** | 无法获取提交范围" in zh["body"]
+    assert "[abc123](https://example.com/commit/abc123) | feat: do a thing | Someone" in zh["body"]
+    assert "[h3]提交记录[/h3]" in zh["bbcode_body"]
+    assert "<h3>提交记录</h3>" in zh["html_body"]
