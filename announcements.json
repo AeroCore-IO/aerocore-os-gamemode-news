@@ -1,5 +1,15 @@
 [
   {
+    "title": "testing-45.20261116",
+    "date": "2026-11-16 16:44",
+    "timestamp": 1794847468,
+    "channel": "beta",
+    "lang": "english",
+    "body": "### Major packages\n\n| Name | Version |\n| --- | --- |\n| **Bazaar** | 0.9.4-5.fc45 |\n| **Distrobox** | 1.8.2.5-2.fc45 |\n| **Gamescope Session** | 0~20261002git.08e65a6-1.fc45 |\n| **InputPlumber** | 0.84.0-4.fc45 |\n| **Kernel** | 7.3.3-300.fc45 |\n| **Firmware** | 20261019-1.fc45 |\n| **Mesa** | 1:26.2.6-2.fc45 |\n| **OpenGamepadUI** | 0.46.1-8.fc45 |\n| **KDE** | 6.8.2-1.fc45 |\n| **PowerStation** | 0.10.0-1.fc45 |\n| **UMU Launcher** | 1.4.4-1.fc45 |\n| **Waydroid** | 1.6.3-2.fc45 |\n\n### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| **Upstream Bazzite** | Commit range unavailable (previous image may predate base image metadata) | — |\n| **AeroCore OS** | | |\n| [2d46b82](https://github.com/AeroCore-IO/AeroCore-OS/commit/2d46b8296a7ee7243f5f6d2d01d6effa1e5b27e9) | Make Flatpak mirror setup resilient | tranch |",
+    "bbcode_body": "[h3]Major packages[/h3]\n\n[table]\n[tr][th]Name[/th][th]Version[/th][/tr]\n[tr][td][b]Bazaar[/b][/td][td]0.9.4-5.fc45[/td][/tr]\n[tr][td][b]Distrobox[/b][/td][td]1.8.2.5-2.fc45[/td][/tr]\n[tr][td][b]Gamescope Session[/b][/td][td]0~20261002git.08e65a6-1.fc45[/td][/tr]\n[tr][td][b]InputPlumber[/b][/td][td]0.84.0-4.fc45[/td][/tr]\n[tr][td][b]Kernel[/b][/td][td]7.3.3-300.fc45[/td][/tr]\n[tr][td][b]Firmware[/b][/td][td]20261019-1.fc45[/td][/tr]\n[tr][td][b]Mesa[/b][/td][td]1:26.2.6-2.fc45[/td][/tr]\n[tr][td][b]OpenGamepadUI[/b][/td][td]0.46.1-8.fc45[/td][/tr]\n[tr][td][b]KDE[/b][/td][td]6.8.2-1.fc45[/td][/tr]\n[tr][td][b]PowerStation[/b][/td][td]0.10.0-1.fc45[/td][/tr]\n[tr][td][b]UMU Launcher[/b][/td][td]1.4.4-1.fc45[/td][/tr]\n[tr][td][b]Waydroid[/b][/td][td]1.6.3-2.fc45[/td][/tr]\n[/table]\n\n[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][b]Upstream Bazzite[/b][/td][td]Commit range unavailable (previous image may predate base image metadata)[/td][td]—[/td][/tr]\n[tr][td][b]AeroCore OS[/b][/td][td][/td][td][/td][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/2d46b8296a7ee7243f5f6d2d01d6effa1e5b27e9]2d46b82[/url][/td][td]Make Flatpak mirror setup resilient[/td][td]tranch[/td][/tr]\n[/table]",
+    "html_body": "<h3>Major packages</h3>\n\n<table>\n<tr><th>Name</th><th>Version</th></tr>\n<tr><td><strong>Bazaar</strong></td><td>0.9.4-5.fc45</td></tr>\n<tr><td><strong>Distrobox</strong></td><td>1.8.2.5-2.fc45</td></tr>\n<tr><td><strong>Gamescope Session</strong></td><td>0~20261002git.08e65a6-1.fc45</td></tr>\n<tr><td><strong>InputPlumber</strong></td><td>0.84.0-4.fc45</td></tr>\n<tr><td><strong>Kernel</strong></td><td>7.3.3-300.fc45</td></tr>\n<tr><td><strong>Firmware</strong></td><td>20261019-1.fc45</td></tr>\n<tr><td><strong>Mesa</strong></td><td>1:26.2.6-2.fc45</td></tr>\n<tr><td><strong>OpenGamepadUI</strong></td><td>0.46.1-8.fc45</td></tr>\n<tr><td><strong>KDE</strong></td><td>6.8.2-1.fc45</td></tr>\n<tr><td><strong>PowerStation</strong></td><td>0.10.0-1.fc45</td></tr>\n<tr><td><strong>UMU Launcher</strong></td><td>1.4.4-1.fc45</td></tr>\n<tr><td><strong>Waydroid</strong></td><td>1.6.3-2.fc45</td></tr>\n</table>\n\n<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><strong>Upstream Bazzite</strong></td><td>Commit range unavailable (previous image may predate base image metadata)</td><td>—</td></tr>\n<tr><td><strong>AeroCore OS</strong></td><td></td><td></td></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/2d46b8296a7ee7243f5f6d2d01d6effa1e5b27e9\" target=\"_blank\" rel=\"noopener\">2d46b82</a></td><td>Make Flatpak mirror setup resilient</td><td>tranch</td></tr>\n</table>"
+  },
+  {
     "title": "testing-45.20261113",
     "date": "2026-11-13 07:34",
     "timestamp": 1794555286,
@@ -188,15 +198,5 @@
     "body": "### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| [115f747](https://github.com/AeroCore-IO/AeroCore-OS/commit/115f7475e2716410fa5603114d3ec8c3211b9ca3) | Fix LiveISO root path initialization | tranch |",
     "bbcode_body": "[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/115f7475e2716410fa5603114d3ec8c3211b9ca3]115f747[/url][/td][td]Fix LiveISO root path initialization[/td][td]tranch[/td][/tr]\n[/table]",
     "html_body": "<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/115f7475e2716410fa5603114d3ec8c3211b9ca3\" target=\"_blank\" rel=\"noopener\">115f747</a></td><td>Fix LiveISO root path initialization</td><td>tranch</td></tr>\n</table>"
-  },
-  {
-    "title": "testing-44.20260912",
-    "date": "2026-09-12 03:26",
-    "timestamp": 1789183603,
-    "channel": "beta",
-    "lang": "english",
-    "body": "### Commits\n\n| Hash | Subject | Author |\n| --- | --- | --- |\n| [07853e7](https://github.com/AeroCore-IO/AeroCore-OS/commit/07853e72cb08f745c04e04f756452a76fd4cc8cf) | Fix brh image ref slash handling | tranch |",
-    "bbcode_body": "[h3]Commits[/h3]\n\n[table]\n[tr][th]Hash[/th][th]Subject[/th][th]Author[/th][/tr]\n[tr][td][url=https://github.com/AeroCore-IO/AeroCore-OS/commit/07853e72cb08f745c04e04f756452a76fd4cc8cf]07853e7[/url][/td][td]Fix brh image ref slash handling[/td][td]tranch[/td][/tr]\n[/table]",
-    "html_body": "<h3>Commits</h3>\n\n<table>\n<tr><th>Hash</th><th>Subject</th><th>Author</th></tr>\n<tr><td><a href=\"https://github.com/AeroCore-IO/AeroCore-OS/commit/07853e72cb08f745c04e04f756452a76fd4cc8cf\" target=\"_blank\" rel=\"noopener\">07853e7</a></td><td>Fix brh image ref slash handling</td><td>tranch</td></tr>\n</table>"
   }
 ]
